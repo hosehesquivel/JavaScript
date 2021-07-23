@@ -1,0 +1,85 @@
+:root {
+    --backgroundcolor: rgb(37, 2, 2);
+    --contentbackgroundcolor: rgb(209, 109, 42);
+    --codecolor: rgb(78, 1, 1);
+    --textcolor: #fff;
+}
+
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--backgroundcolor);
+    color: var(--textcolor);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+.code {
+    font-family: monospace;
+    margin: 10px 20px;
+    color: var(--codecolor);
+}
+
+h3 {
+    margin: 7px 0;
+}
+
+h4 {
+    margin-top: 7px;
+}
+
+.content {
+    display: grid;
+    place-items: center;
+    width: 700px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.button {
+    margin: 5px auto;
+    display:block;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    width: 10em;
+    background: var(--backgroundcolor);
+    text-align: center;
+}
+
+.button:hover {
+    background: var(--codecolor);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    border-bottom: 0 solid white;
+    width: 20rem;
+    justify-content: space-between;
+    padding: 20px
+}
+
+nav ul li a {
+    color: white;
+    font-size: 18px;
+    margin-left: 0;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.menu :hover {
+    color: white;
+}
+
+.entry {
+    width: 100%;
+    margin: 10px 0;
+    padding: 20px;
+    background: var(--contentbackgroundcolor);
+    text-align: left;
+    border-radius: 1em;
+}
