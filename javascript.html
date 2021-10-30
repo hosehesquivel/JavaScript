@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Practices</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="practices.js"></script>
+</head>
+<body>
+    
+    <div class="content">
+        <div class="header">
+            <h1>Web Development Lab</h1>
+            <h2>A place for all your HTML/CSS/JS experiments and projects.</h2>
+        </div>
+
+        <nav class=menu>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="javascript.html">Javascript Notes</a></li>
+                <li><a href="css.html">CSS Notes</a></li>
+                <li><a href="projects.html">Projects</a></li>
+            </ul>
+        </nav>
+
+        <div class="entry">
+            <h2>Javascript</h2>
+            <p>Variables are the basic form of data storage.</p>
+            <p class="code">
+                let person = {
+                    name = "John",
+                    age = 23,
+                    occupation = Gundam Pilot,
+                }
+            </p>
+        </div>
+
+        <div class="entry">
+            <h2>Variables</h2>
+            <p>Variables are the basic form of data storage.</p>
+            <p class="code">
+                let name = "John";            //   String :iteral<br>
+                let age = 30;                 //   Numberal Literal<br>
+                let isApproved = true;        //   Boolean Literal<br>
+                let middleName = undefined;<br>
+                let lastName = null;          //   Clears variable.<br>
+            </p>
+            <p>How to compressed everything into a single variable.</p>
+            <p class="code">
+                let person = {
+                    name = "John",
+                    age = 23,
+                    occupation = Gundam Pilot,
+                }
+            </p>
+            <p>
+                They cannot be a reserved keyword.<br>
+                Should be meaningful.<br>
+                Cannot start with a number. (1name)<br>
+                Cannot contain a space or hyphen (-)<br>
+            </p>
+            <p><h3>Constants</h3></p>
+            <p>
+                You can also use 'const' to create a constant.<br>
+                Constants are used when you don't need to have a variable changed.<br>
+            </p>
+            <p class="code">const age = 30;</p>
+            <p>NOTE: DO NOT USE VAR. Use let as it has a more limited scope.</p>
+        </div>
+
+        <div class="entry">
+            <h2>Notation</h2>
+            <p>To notate, do this:</p>
+            <p class="code">person.occupation;</p>
+        </div>
+
+        <div class="entry">
+            <h2>Loops</h2>
+            <p>Loops are used to create a series of statements and funtions.</p>
+            <h4>For Loop</h4>
+            <p class="code">
+                for (let i = 0; i < 5; i++) {
+                    console.log('Hello World!');
+                    if (i % 2 !== 0) console.log(i);
+                }
+            </p>
+            <p>i will start at 0 and add 1 until it reaches 5.</p>
+            <p>In each loop the if statement will run.</p>
+            <h4>While Loop</h4>
+            <p class="code">
+                while (let a < 10) {
+                    text += "The number is " + a;
+                    a++
+                }
+            </p>
+            <p>While a is less than 10, the text will be printed.</p>
+        </div>
+    </div>
+    
+</body>
+</html>

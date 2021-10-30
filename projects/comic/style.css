@@ -1,0 +1,65 @@
+:root {
+    --backgroundcolor: rgb(49, 15, 40);
+    --contentbackgroundcolor: rgb(209, 109, 42);
+    --codecolor: rgb(78, 1, 1);
+    --textcolor: #fff;
+}
+
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--backgroundcolor);
+}
+
+.comic__container {
+    place-items: center;
+    width: 800px;
+    height: 800px;
+    margin: 0 auto;
+    padding: 0;
+    overflow: hidden;
+}
+
+/* NAVIGATION PAGES */
+
+.comic__pagenav {
+    background-color: blue;
+    width: 100%;
+}
+
+.comic__pagenav--image img{
+    width: 100%;
+}
+
+/* NAVIGATION BUTTONS */
+
+.comic__pagenav--button {
+    position: absolute;
+    border: 0;
+    border-radius: 0;
+    opacity: .5;
+    width: 80px;
+    height: 100%;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+
+/* CHAPTER NAVIGATION */
+
+.comic__pagenav--chapternav {
+    position: absolute;
+    bottom: -100px;
+    background-color: black;
+    width: 100%;
+    height: 100px;
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Lab</title>
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="content">
+        <div class="header">
+            <h1>Web Development Lab</h1>
+            <h2>A place for all your HTML/CSS/JS experiments and projects.</h2>
+        </div>
+
+        <nav class=menu>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="javascript.html">Javascript Notes</a></li>
+                <li><a href="css.html">CSS Notes</a></li>
+                <li><a href="projects.html">Projects</a></li>
+            </ul>
+        </nav>
+
+        <div class="entry">
+            <h2>Basics</h2>
+            <p> IMPORT </p>
+            <p> When you need to reference another file or resource. </p>
+            
+            <p class="code"> @import url('http://www.yoursite.com/'); </p>
+            <p class="code"> @import url('https://fonts.googleapis.com'); </p>
+        </div>
+
+        <div class="entry">
+            <h2>Universal Selector</h2>
+            <p>Use this to create universal rules to your site. Keep it at the top.</p>
+            <p>* { paramaters go here }</p>
+            <p class="code">
+                * {<br>
+                    margin: 0;<br>
+                }<br>
+            </p>
+        </div>
+
+        <div class="entry">
+            <h2>Custom Properties</h2>
+            <p>Use these to create variables to reference later.</p>
+            <p class="code">:root { --property: val; }</p>
+            <p>value has to match the parameters of desired element.</p>
+            <p class="code">
+                :root { <br>
+                    --primary-clr: #456;<br>
+                }<br>
+            </p>
+        </div>
+
+        <div class="entry">
+            <h2>Adjacent Sibling</h2>
+            <p>A combinator used when editing elements in a group.</p>
+            <p class="code">
+                .selector + .selector<br>
+                .selector > .selector<br>
+            </p>
+            <p>
+                Use this when editing elements that are after or behind a specific class without extra markup.
+            </p>
+            <p>Use this on child elements.</p>
+        </div>
+
+    </div>
+    
+</body>
+</html>
