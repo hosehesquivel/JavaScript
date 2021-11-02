@@ -1,0 +1,99 @@
+// Frontpage
+.frontpage {
+    grid-row: 2;
+
+    display: grid;
+    grid-template-columns: auto auto;
+
+    height: 800px;
+    width: 600px;
+    margin: 0 auto;
+    padding: 0;
+    
+    .frontpagetext {
+        grid-column: 1;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    
+        width: 250px;
+        height: 300px;
+        margin: auto 0;
+    
+        .greeting {
+            position: relative;
+            color: white;
+            font-size: 60px;
+            font-weight: bold;
+            margin: 0;
+            padding: 0;
+        }
+    
+        p {
+            width: 100%;
+            color: white;
+            margin-bottom: 15px;
+        }
+    }
+
+    .frontpagemask {
+        grid-column: 2;
+    
+        -webkit-mask-image: url(/images/logo-alto-shorter.svg);
+        -webkit-mask-size: 500px;
+        -webkit-mask-repeat:no-repeat;
+    
+        mask-image: url(/images/logo-alto-shorter.svg);
+        mask-size: 400px;
+        mask-repeat: no-repeat;
+        
+    
+        width: 400px;
+        height: 500px;
+        margin: auto;
+        
+        overflow: hidden;
+    
+        img {
+            width: 500px;
+        }
+    }
+}
+
+// Frontpage Work
+.frontpage-work {
+    grid-row: 3;
+
+    width: 1200px;
+    margin: 0 auto;
+    
+    .work {
+        display: flex;
+        justify-content: space-around;
+    
+        width: 800px;
+        margin: 0 auto;
+        
+        .work-container {
+            background-color: $containerbg;
+            display: grid;
+            grid-template-rows: auto;
+            position: relative;
+        
+            width: 350px;
+            height: 400px;
+            padding: 15px;
+        
+            .work-container-logo {
+                width: 300px;
+                margin: 0 auto;
+            }
+        
+            p {
+                width: 100%;
+                margin-bottom: 5px;
+            }
+        }
+    }
+    
+}
