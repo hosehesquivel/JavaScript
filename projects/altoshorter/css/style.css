@@ -48,10 +48,11 @@
 .frontpage .frontpagemask {
   -ms-grid-column: 2;
   grid-column: 2;
-  -webkit-mask-image: url(images/logo-alto-shorter.svg);
+  -webkit-mask-image: url(.../images/logo-alto-shorter.svg);
   -webkit-mask-size: 500px;
   -webkit-mask-repeat: no-repeat;
-  mask-image: url(images/logo-alto-shorter.svg);
+  -webkit-mask-image: url(images/logo-alto-shorter.svg);
+          mask-image: url(images/logo-alto-shorter.svg);
   -webkit-mask-size: 400px;
           mask-size: 400px;
   mask-repeat: no-repeat;
