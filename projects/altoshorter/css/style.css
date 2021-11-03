@@ -139,6 +139,11 @@
 
 .contactform ul li {
   font-size: 30px;
+  color: white;
+}
+
+.contactform ul li a {
+  color: white;
 }
 
 #info {
