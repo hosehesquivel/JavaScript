@@ -1,15 +1,20 @@
 const carouselSlide = document.querySelector('.comic_slide');
 const carouselImages = document.querySelectorAll('.comic_slide img');
+const comicChapter = document.querySelector('.comic_chapternav')
 
 // Buttons
 const prevBtn = document.querySelector('#prevBtn');
 const nextBtn = document.querySelector('#nextBtn');
+const chapBtn = document.querySelector('#chapterNav');
+const chapCls = document.querySelector('#chapterClose');
 
 // Counter
 let counter = 1;
 const size = carouselImages[0].clientWidth;
+const chapnavHeight = comicChapter.clientHeight;
 
 carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+//comicChapter.style.transform = 'translateY(' + (-size * counter) + 'px)';
 
 // Button Listeners
 
@@ -38,4 +43,14 @@ carouselSlide.addEventListener('transitionend', () => {
         counter = carouselImages.length - counter;
         carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
     }
+});
+
+chapterNav.addEventListener('click', () => {
+    comicChapter.style.transition = "transform 0.4s ease-in-out";
+    comicChapter.style.transform = 'translateY(' + -600 + 'px)';
+});
+
+chapCls.addEventListener('click', () => {
+    comicChapter.style.transition = "transform 0.4s ease-in-out";
+    comicChapter.style.transform = 'translateY(' + chapnavHeight + 'px)';
 });

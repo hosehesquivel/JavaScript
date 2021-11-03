@@ -14,6 +14,8 @@
         <div class="comic_container">
             <button class="prev comic_pagenav-button" id="prevBtn"><</button>
             <button class="next comic_pagenav-button" id="nextBtn">></button>
+            <button class="chapternav-button" id="chapterNav"></button>
+
             <div class="comic_slide">
                 <img src="images/SK_2021_153.png" id="lastClone">
                 <img src="images/SK_2021_144.png">
@@ -24,9 +26,16 @@
                 <img src="images/SK_2021_144.png" id="firstClone">
             </div>
             
-            
-            <!-- <div class="comic_chapternav"></div> -->
+            <div class="comic_chapternav">
+                <ul class="chapternav">
+                    <li>Prev</li>
+                    <li>Chapter Index</li>
+                    <li>Next</li>
+                </ul>
+                <button class="chapnavCloseButton" id="chapterClose">X</button>
+            </div>
         </div>
+
     </div>
 
     <script src="comicviewer.js"></script>
