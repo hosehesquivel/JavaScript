@@ -4,6 +4,7 @@
 
 .comic_viewer {
     @include flexCenter($primary);
+    min-height: 100vh;
     margin: 0;
 }
 
@@ -11,7 +12,6 @@
     position: relative;
     width: $comicwidth;
     height: $comicheight;
-    margin: auto;
     overflow: hidden;
 
     button {
@@ -19,7 +19,7 @@
         background: red;
         opacity: .5;
         border: 0;
-        width: 8rem;
+        width: $pagenavbutton;
         height: 100%;
         margin: 0;
         padding: 0;
@@ -73,17 +73,16 @@
     }
 }
 
-// @media screen and (min-width: 1024px) {
-//     .comic_viewer {
-//         background: red;
-//     }
-// }
+@media screen and (max-width: 540px) {
+    .comic_container {
+        width: 540px;
+        height: 720px;
+    }
+}
 
-// .comic_chapternav {
-//     background: blue;
-//     position: absolute;
-//     border-radius: 25px;
-//     width: 400px;
-//     height: 400px;
-//     bottom: -400px;
-// }
+@media screen and (max-width: 1024px) {
+    .comic_container {
+        width: 1024px;
+        height: 1366px;
+    }
+}

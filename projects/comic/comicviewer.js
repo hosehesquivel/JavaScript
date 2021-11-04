@@ -14,7 +14,6 @@ const size = carouselImages[0].clientWidth;
 const chapnavHeight = comicChapter.clientHeight;
 
 carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
-//comicChapter.style.transform = 'translateY(' + (-size * counter) + 'px)';
 
 // Button Listeners
 

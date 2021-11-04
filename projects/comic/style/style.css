@@ -20,7 +20,11 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background: blue;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: red;
+  min-height: 100vh;
   margin: 0;
 }
 
@@ -28,7 +32,6 @@ body {
   position: relative;
   width: 810px;
   height: 1080px;
-  margin: auto;
   overflow: hidden;
 }
 
@@ -78,7 +81,10 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background: blue;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: red;
   z-index: 10;
   position: absolute;
   background: blue;
@@ -105,5 +111,19 @@ body {
   margin: auto 0;
   width: 50px;
   height: 50px;
+}
+
+@media screen and (max-width: 540px) {
+  .comic_container {
+    width: 540px;
+    height: 720px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .comic_container {
+    width: 1024px;
+    height: 1366px;
+  }
 }
 /*# sourceMappingURL=style.css.map */
