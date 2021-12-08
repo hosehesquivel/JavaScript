@@ -4,38 +4,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="/style/style.css">
     <title>Comic Viewer</title>
 </head>
 <body>
 
     <div class="comic_viewer">
-
         <div class="comic_container">
-            <button class="prev comic_pagenav-button" id="prevBtn"><</button>
-            <button class="next comic_pagenav-button" id="nextBtn">></button>
-            <button class="chapternav-button" id="chapterNav"></button>
-
-            <div class="comic_slide">
-                <img src="images/SK_2021_153.png" id="lastClone">
-                <img src="images/SK_2021_144.png">
-                <img src="images/SK_2021_142.png">
-                <img src="images/SK_2021_145.png">
-                <img src="images/SK_2021_150.png">
-                <img src="images/SK_2021_153.png">
-                <img src="images/SK_2021_144.png" id="firstClone">
-            </div>
+            <button class="button prev" id="prevBtn"><</button>
+            <button class="button next" id="nextBtn">></button>
+            <button class="button chapter" id="chapterNav"></button>
             
+            <div class="comic_slider">    
+                <div class="comic_slide"><img src="images/SK_2021_144.png"></div>
+                <div class="comic_slide"><img src="images/SK_2021_144.png"></div>
+                <div class="comic_slide"><img src="images/SK_2021_142.png"></div>
+                <div class="comic_slide"><img src="images/SK_2021_145.png"></div>
+                <div class="comic_slide"><img src="images/SK_2021_145.png"></div>
+            </div>
+                
             <div class="comic_chapternav">
                 <ul class="chapternav">
                     <li>Prev</li>
                     <li>Chapter Index</li>
                     <li>Next</li>
                 </ul>
-                <button class="chapnavCloseButton" id="chapterClose">X</button>
+                <button class="chapnavCloseButton" id="chapterNavClose">X</button>
             </div>
         </div>
-
     </div>
 
     <script src="comicviewer.js"></script>

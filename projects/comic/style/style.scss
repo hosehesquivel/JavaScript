@@ -1,5 +1,5 @@
-@import "./body";
 @import "./variables";
+@import "./body";
 @import "./mixings";
 
 .comic_viewer {
@@ -29,21 +29,27 @@
     .prev { left: 0;}
     .next { right: 0;}
 
-    .chapternav-button {
+    .chapter {
         left: ($comicwidth / 2) - $chapternavwidth / 2;
         top: ($comicheight / 2) - $chapternavheight / 2;
         width: $chapternavwidth;
         height: $chapternavheight;
+        background-color: blue;
     }
 }
 
-.comic_slide {
-    display: flex;
-    width: 100%;
-
-    img {
-        width: 100%;
-        height: 100%;
+.comic_slider {
+    //width: 100%;
+    height: 100%;
+    display: inline-flex;
+    user-select: none;
+    background-color: palegoldenrod;
+    
+    .comic_slide {
+        display: flex;
+        width: auto;
+        height: auto;
+        background-color: white;
     }
 }
 
@@ -51,21 +57,27 @@
     @include flexCenter($primary);
     z-index: 10;
     position: absolute;
-    background: blue;
-    bottom: -$chapternavbarheight;
-    width: 100%;
+    background: black;
+    width: $chapternavbarwidth;
     height: $chapternavbarheight;
+    left: ($comicwidth / 2) - $chapternavbarwidth / 2;
+    bottom: -$chapternavbarheight;
+    padding: 10px;
+    border-radius: 25px 25px 0 0;
 
     .chapternav {
-        background: white;
         display: flex;
+        background: #444;
+        color: #fff;
+        align-items: center;
         justify-content: space-between;
-        margin: auto 0;
         width: 400px;
+        height: 100px;
+        margin: auto 0;
+        padding: 10px;
     }
 
     .chapnavCloseButton {
-        left: 100px;
         top: 25px;
         margin: auto 0;
         width: 50px;
@@ -73,16 +85,4 @@
     }
 }
 
-@media screen and (max-width: 540px) {
-    .comic_container {
-        width: 540px;
-        height: 720px;
-    }
-}
-
-@media screen and (max-width: 1024px) {
-    .comic_container {
-        width: 1024px;
-        height: 1366px;
-    }
-}
+@import "./mediaquery";

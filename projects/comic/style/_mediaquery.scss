@@ -1,0 +1,34 @@
+@media screen and (max-width: 540px) {
+    .comic_container {
+        width: 540px;
+        height: 720px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .comic_container {
+        position: relative;
+        width: 1024px;
+        height: 1366px;
+
+        .chapter {
+            left: $chapternavwidth / 2;
+            background-color:purple;
+        }
+    }
+
+    .comic_slider {
+        user-select: none;
+        background-color: palegoldenrod;
+
+        .comic_slide {
+            width: 1024px;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    .comic_chapternav {
+        left: $chapternavbarwidth / 2;
+    }
+}

@@ -1,55 +1,69 @@
-const carouselSlide = document.querySelector('.comic_slide');
-const carouselImages = document.querySelectorAll('.comic_slide img');
+const comicContainer = document.querySelector('.comic_container')
+const comicSlider = document.querySelector('.comic_slider')
+const comicPage = document.querySelectorAll('.comic_slide')
 const comicChapter = document.querySelector('.comic_chapternav')
 
-// Buttons
-const prevBtn = document.querySelector('#prevBtn');
-const nextBtn = document.querySelector('#nextBtn');
-const chapBtn = document.querySelector('#chapterNav');
-const chapCls = document.querySelector('#chapterClose');
+const nextBtn = document.querySelector('#nextBtn')
+const prevBtn = document.querySelector('#prevBtn')
+const chapBtnOpen = document.querySelector('#chapterNav')
+const chapBtnClose = document.querySelector('#chapterNavClose')
 
-// Counter
-let counter = 1;
-const size = carouselImages[0].clientWidth;
-const chapnavHeight = comicChapter.clientHeight;
+let counter = 0;
+let comicSize = comicContainer.clientWidth
+const chapterSize = comicChapter.clientHeight
+const chapterLength = comicPage.length - 1
 
-carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+comicSlider.style.transform = 'translateX(' + (-comicSize * counter) + 'px)'
 
-// Button Listeners
+comicPage[0].id = 'lastClone'
+comicPage[chapterLength].id = 'firstClone'
 
-nextBtn.addEventListener('click', () => {
-    if (counter >= carouselImages.length - 1) return;
-    carouselSlide.style.transition = "transform 0.4s ease-in-out";
-    counter++;
-    carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
-});
+comicSlider.addEventListener('keydown', nextPage)
+nextBtn.addEventListener('click', nextPage)
+prevBtn.addEventListener('click', prevPage)
+chapBtnOpen.addEventListener('click', chapOpen)
+chapBtnClose.addEventListener('click', chapClose)
 
-prevBtn.addEventListener('click', () => {
-    if (counter <= 0) return;
-    carouselSlide.style.transition = "transform 0.4s ease-in-out";
-    counter--;
-    carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
-});
+window.onresize = function() {
+    comicSize = comicContainer.clientWidth
+    comicSlider.style.transition = "none";
+    comicSlider.style.transform = 'translateX(' + (-comicSize * counter) + 'px)'
+}
 
-carouselSlide.addEventListener('transitionend', () => {
-    if (carouselImages[counter].id === 'lastClone') {
-        carouselSlide.style.transition = "none";
-        counter = carouselImages.length - 2;
-        carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+function nextPage() {
+    if (counter < chapterLength) {
+        comicSlider.style.transition = "transform 0.4s ease-in-out"
+        counter++
+        comicSlider.style.transform = 'translateX(' + (-comicSize * counter) + 'px)'
     }
-    if (carouselImages[counter].id === 'firstClone') {
-        carouselSlide.style.transition = "none";
-        counter = carouselImages.length - counter;
-        carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
-    }
-});
+}
 
-chapterNav.addEventListener('click', () => {
+function prevPage() {
+    if (counter > 0) { 
+        comicSlider.style.transition = "transform 0.4s ease-in-out"
+        counter--
+        comicSlider.style.transform = 'translateX(' + (-comicSize * counter) + 'px)'
+    }
+}
+
+function chapOpen() {
     comicChapter.style.transition = "transform 0.4s ease-in-out";
     comicChapter.style.transform = 'translateY(' + -600 + 'px)';
-});
+}
 
-chapCls.addEventListener('click', () => {
-    comicChapter.style.transition = "transform 0.4s ease-in-out";
-    comicChapter.style.transform = 'translateY(' + chapnavHeight + 'px)';
-});
+function chapClose() {
+    comicChapter.style.transform = 'translateY(' + chapterSize + 'px)';
+}
+
+// comicSlider.addEventListener('transitionend', () => {
+//     if (comicPage[counter].id === 'lastClone') {
+//         comicSlider.style.transition = "none";
+//         counter = comicPage.length - 2;
+//         comicSlider.style.transform = 'translateX(' + (-comicSize * counter) + 'px)';
+//     }
+//     if (comicPage[counter].id === 'firstClone') {
+//         comicSlider.style.transition = "none";
+//         counter = comicPage.length - counter;
+//         comicSlider.style.transform = 'translateX(' + (-comicSize * counter) + 'px)';
+//     }
+// })

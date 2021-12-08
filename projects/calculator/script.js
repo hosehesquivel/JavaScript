@@ -124,3 +124,10 @@ deleteButton.addEventListener('click', button => {
     calculator.delete()
     calculator.updateDisplay()
 })
+
+const numberlicious = "13";
+
+numberolic = parseInt(numberlicious);
+result = numberolic + 10;
+console.log(result);
+console.log("the number is " + numberolic)
