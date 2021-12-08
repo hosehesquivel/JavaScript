@@ -67,6 +67,7 @@ body {
 }
 
 .comic_slider {
+  width: 100%;
   height: 100%;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -165,6 +166,9 @@ body {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+  }
+  .comic_slider .comic_slide img {
+    width: 100%;
   }
   .comic_chapternav {
     left: 250px;
