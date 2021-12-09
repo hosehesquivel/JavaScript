@@ -48,7 +48,7 @@ function prevPage() {
 
 function chapOpen() {
     comicChapter.style.transition = "transform 0.4s ease-in-out";
-    comicChapter.style.transform = 'translateY(' + -600 + 'px)';
+    comicChapter.style.transform = 'translateY(' + -300 + 'px)';
 }
 
 function chapClose() {
