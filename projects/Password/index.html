@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    <script type="module" src="script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <div class="name"><h1>Password Generator</h1></div>
+        <div class="result-container">
+            <span id="result"></span>
+            <button class="btn" id="clipboard">
+                Copy
+            </button>
+        </div>
+        <div class="settings">
+            <div class="setting">
+                <label>How Many Words?</label>
+                <input type="range" min="1" max="4" value="3" id="characterAmountRange">
+                <input type="number" min="1" max="4" value="3" id="characterAmountNumber">
+            </div>
+            <div class="setting">
+                <label>Uppercase Letters</label>
+                <input type="checkbox" id="uppercase" checked />
+            </div>
+            <!-- <div class="setting">
+                <label>Lowercase Letters</label>
+                <input type="checkbox" id="lowercase" checked />
+            </div> -->
+            <div class="setting">
+                <label>Include Numbers</label>
+                <input type="checkbox" id="numbers" checked />
+            </div>
+            <div class="setting">
+                <label>Include Symbols</label>
+                <input type="checkbox" id="symbols" checked />
+            </div>
+
+            <button class="btn btn-large" id="generate">
+                Generate Password
+            </button>
+        </div>
+    </div>
+
+    <div class="copy-alert" id="copy-alert">
+        <div class="copy-alert-msg" id="copy-alert-msg">
+            <h2>Password copied!</h2>
+            <button class="btn btnok" id="okbutton">OK</button>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
+
+</body>
+</html>
