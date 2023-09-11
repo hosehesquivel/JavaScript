@@ -1,0 +1,187 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'montserrat', sans-serif;
+    background-color: var(--backgrounddark);
+}
+
+:root {
+    --backgroundlight: #89B6A5;
+    --backgrounddark: #6A706E;
+    --formentry: #C9EDDC;
+    --addbutton: #4C3B4D;
+    --addbuttonhover: #82968C;
+    --deletebutton: red;
+    --appheight: 800px;
+    --appwidth: 360px;
+}
+
+.splashpage {
+    position: absolute;
+    display: flex;
+    background-color: black;
+    width: var(--appwidth);
+    height: var(--appheight);
+    top: 0;
+    left: 0;
+}
+
+.splashpage img {
+    width: 150px;
+    height: 150px;
+    margin: auto auto;
+    background: none;
+}
+
+.container {
+    background: none;
+    width: var(--appwidth);
+    height: var(--appheight);
+    padding: 20px;
+}
+
+.title {
+    display: flex;
+    flex-flow: nowrap;
+    flex-direction: column;
+    justify-items: center;
+    background-color: var(--backgroundlight);
+    height: 248px;
+    overflow: hidden;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.title img{
+    width: 40%;
+    height: 40%;
+    margin: 0 auto;
+    background: none;
+}
+
+.title form {
+    background: none;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.title input[type=text] {
+    display: block;
+    width: 80%;
+    height: 40px;
+    border: 2px solid var(--addbutton);
+    margin: 0 auto;
+    padding: 3px 10px;
+    color: var(--backgroundlight);
+    background-color: var(--formentry);
+    box-sizing: border-box;
+    outline: none
+}
+
+.title input[type=text]:focus {
+    width: 80%;
+    border: none;
+    border: 2px solid var(--addbutton);
+    color: var(--addbutton);
+}
+
+.title input[type=submit] {
+    width: 125px;
+    height: 50px;
+    margin: 2% auto;
+    border: none;
+    background-color: var(--addbutton);
+    color: var(--formentry);
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.title input[type=submit]:hover {
+    background-color: var(--addbuttonhover);
+}
+
+.title input[type=submit]:active {
+    background-color: var(--addbutton);
+}
+
+.tasklist {
+    height: 300px;
+    background: none;
+}
+
+.task {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    background: var(--backgroundlight);
+    box-shadow: 0 10px 10px var(--addbutton);
+    width: 100%;
+    height: 70px;
+    border-radius: 10px;
+    margin: 20px auto 20px;
+    padding: 15px;
+    transition: .5s;
+}
+
+.task input[type=radio] {
+    width: 30px;
+    height: 30px;
+    align-self: center;
+    color: var(--addbutton);
+    margin-right: 8px;
+}
+
+.task input[type=text] {
+    background: none;
+    border: 0;
+    width: 40%;
+    height: 30px;
+    padding: 0 5px;
+    flex-grow: 1;
+    align-items: center;
+    outline: none;
+}
+
+.task input[type=text]:focus {
+    background-color: none;
+    border: none;
+}
+
+.done input[type=text]{
+    text-decoration: line-through;
+}
+
+.task button {
+    border: none;
+    width: auto;
+    height: 100%;
+    margin-left: 6px;
+    padding: 0 10px;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.task button:hover {
+    align-self: stretch;
+    background-color: var(--backgrounddark);
+    color: var(--formentry);
+}
+
+.delete-button {
+    background-color: #841F1F;
+    color: var(--formentry);
+}
+
+.delete-button:hover {
+    background-color: coral;
+    color: var(--addbutton);
+}
+
+.taskentry::selection {
+    border: 0;
+}
