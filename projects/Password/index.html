@@ -15,7 +15,9 @@
     <div class="container">
         <div class="name"><h1>Password Generator</h1></div>
         <div class="result-container">
-            <span id="result"></span>
+            <div class="result-word">
+                <span id="result"></span>
+            </div>
             <button class="btn" id="clipboard">
                 Copy
             </button>
@@ -28,7 +30,7 @@
             </div>
             <div class="setting">
                 <label>Uppercase Letters</label>
-                <input type="checkbox" id="uppercase" checked />
+                <input type="checkbox" class="check" id="uppercase" checked />
             </div>
             <!-- <div class="setting">
                 <label>Lowercase Letters</label>
@@ -36,11 +38,11 @@
             </div> -->
             <div class="setting">
                 <label>Include Numbers</label>
-                <input type="checkbox" id="numbers" checked />
+                <input type="checkbox" class="check" id="numbers" checked />
             </div>
             <div class="setting">
                 <label>Include Symbols</label>
-                <input type="checkbox" id="symbols" checked />
+                <input type="checkbox" class="check" id="symbols" checked />
             </div>
 
             <button class="btn btn-large" id="generate">
