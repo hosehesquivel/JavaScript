@@ -165,7 +165,8 @@ h1 {
     }
 
     .settings {
-        height: 100%;
+        height: 400px;
+        padding-top: 70px;
     }
 
     /* .setting {
@@ -178,11 +179,13 @@ h1 {
     }
 
     .btn-large {
-        width: 100%;
+        /* width: 100%; */
         height:10rem;
-        position: absolute;
+        /* position: absolute; */
         bottom: 0;
         left:0;
         border-radius: 0;
+        width: 100%
+
     }
 }
