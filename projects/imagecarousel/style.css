@@ -1,0 +1,43 @@
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    list-style: none;
+}
+
+.carousel {
+    position: relative;
+    width: 700px;
+    height: 900px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.carousel-track-container {
+    background-color: lightgreen;
+    position: relative;
+    height: 100%;
+}
+
+.carousel-track {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    position: relative; /*fgh*/
+    height: 100%; /*fgh*/
+    transition: transform 250ms ease-in;
+}
+
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.carousel-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
