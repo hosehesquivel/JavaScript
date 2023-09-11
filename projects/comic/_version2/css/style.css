@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
+:root {
+    --backgroundcolor: #1F1D2B;
+    --objectcolor: #00A5F2;
+    --fontcolor: #ffffff;
+    --navlinkcolor: yellow;
+    --highlight: #FFAA16;
+    --bottommargin: 40px;
+    --contentwidth: 800px;
+}
+
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    background: var(--backgroundcolor);
+}
+
+.maincontent {
+    width: var(--contentwidth);
+    margin: 0 auto;
+}
+
+/* Top Bar */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: space-between;
+    float: right;
+}
+
+.navbar ul li a {
+    display: block;
+    padding: 10px 15px;
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--navlinkcolor);
+    font-style: bold;
+    text-decoration: none;
+    transition: all 400ms ease;
+}
+
+.navbar ul li a:hover {
+    color: var(--objectcolor);
+}
+
+
+/* Hero Image */
+
+.heroimg {
+    background: var(--objectcolor);
+    width: 100%;
+    height: 250px;
+    margin-bottom: var(--bottommargin);
+}
+
+/* Latest Chapter */
+
+.latestchapter {
+    background: var(--objectcolor);
+    width: 100%;
+    height: 250px;
+    margin-bottom: var(--bottommargin);
+}

@@ -1,0 +1,30 @@
+:root {
+    --comicarrow: auto;
+    --comicpage: 550px;
+}
+
+.comic {
+
+}
+
+.comic__pagenavbutton {
+    position: absolute;
+    border: 0;
+    background-color: blue;
+    width: 100px;
+    height: 100%;
+}
+
+.comic_pagenav--pages {
+    display: flex;
+    overflow: hidden;
+}
+
+.comic__pagenavbutton img {
+    position: absolute;
+    width: 50px;
+}
+
+.comic__pagenavbutton--previous {
+    right: 40px;
+}
