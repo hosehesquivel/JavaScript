@@ -188,4 +188,21 @@ h1 {
         width: 100%
 
     }
+
+    .copy-alert-msg {
+        display: flexbox;
+        width: 300px;
+        padding: 0;
+        margin: 0;
+    }
+
+    .btnok {
+        display: grid;
+        width: 100%;
+        height: 40px;
+        border-radius: 0;
+        margin:0;
+        padding: 0;
+        align-content: center;
+    }
 }
