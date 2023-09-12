@@ -1,25 +1,13 @@
-// Constructor Function
-
-// function Person(firstName, lastName, dob) {
-//     this.firstName = firstName;
-//     this.lastName = lastName;
-//     this.dob = new Date(dob);
-// }
-
-// Person.prototype.getBirthYear = function() {
-//     return this.dob.getFullYear();
-// }
-
-// Person.prototype.getFullName = function() {
-//     return `${this.firstName} ${this.lastName}`;
-// }
-
 // Class
 class Person {
-    constructor(firstName, lastName, dob) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+    constructor(username, email, password, firstname, lastname, dob, termcheck) {
+        this.username = username
+        this.email = email
+        this.password = password
+        this.firstName = firstname;
+        this.lastName = lastname;
         this.dob = new Date(dob);
+        this.termCheck = termcheck
     }
 
     getBirthYear() {
@@ -36,25 +24,40 @@ class Person {
 const person1 = new Person('John', 'Doe', '4-3-1980');
 const person2 = new Person('Mary', 'Smith', '3-6-1970');
 
-console.log(person1, person2.firstName, person1.dob.getFullYear());
+const username = document.getElementById("username").value
+const email = document.getElementById("email").value
+const password = document.getElementById("password").value
+const firstName = document.getElementById("firstname").value
+const lastName = document.getElementById("lastname").value
+const dob = document.getElementById("dob").value
+const termCheck = document.getElementById("termcheck").checked
 
-console.log(person1.getBirthYear());
-console.log(person1.getFullName());
+const submitButton = document.getElementById("submit")
 
-// THE DOM!
+// Events
+submitButton.addEventListener("click", () => {
 
-console.log(window);
+    if (validateemail(email) == false) {
+        alert('Must enter a valid email.')
+        event.preventDefault()
+    }
 
-alert(1);
+    if (!termCheck.checked) {
+        alert('Must accept the terms of use')
+        event.preventDefault()
+    }
+    
+    console.log(new Person(username, email, password, firstName, lastName, dob, termCheck))
+})
 
-// Single Elment
-document.getElementById('my-form');
+// Functions
+function validateemail(input) {
+    let validRegex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 
-// console.log(document.getElementById('my-form'));
-console.log(document.querySelector('h1'));
-
-// Multiple Element
-
-console.log(document.querySelectorAll('.item'));
-// console.log(document.getElementsByClassName('item'));
-// console.log(document.getElementsByClassName('li'));
+    if (input.match(validRegex)) {
+        return true
+    }
+    else {
+        return false
+    }
+}

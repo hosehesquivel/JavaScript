@@ -1,3 +1,12 @@
+:root {
+    --output: rgb(21, 4, 95);
+    --button: rgba(255, 255, 255, 1);
+    --buttonhover: rgb(51, 51, 139);
+    --buttonactive: rgba(255, 255, 255, 1);
+    --number: rgba(36, 31, 65, 0.75);
+    --numberhover: white;
+}
+
 *, *::before, *::after {
     box-sizing: border-box;
     font-family: Gotham Rounded, sans-serif;
@@ -23,19 +32,24 @@ body {
 .calculator-grid > button {
     cursor: pointer;
     font-size: 2rem;
-    border: 0 solid white;
+    border: 0;
     border-radius: 25px;
     outline: 10px black;
-    background-color: rgba(255, 255, 255, 1);
-    transition: transform 0ms;
+    background-color: var(--button);
+    transition: transform 200ms;
 }
 
 .calculator-grid > button:hover {
     transform: scale(1.2);
-    background: rgb(51, 51, 139);
-    color: white;
+    background: var(--buttonhover);
+    color: var(--numberhover);
     z-index: 100;
     transition: 200ms;
+}
+
+.calculator-grid > button:active {
+    background-color: var(--buttonactive);
+    transform: scale(1.1);
 }
 
 .span-two {
@@ -44,7 +58,7 @@ body {
 
 .output {
     grid-column: 1 / -1;
-    background-color: rgba(36, 31, 65, 0.75);
+    background-color: var(--output);
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
@@ -62,4 +76,5 @@ body {
 .output .current-operand {
     color: white;
     font-size: 2.5rem;
+    overflow: hidden;
 }

@@ -8,30 +8,58 @@
     <link rel="stylesheet" href="objectoriented.css">
 </head>
 <body>
-    <header>Object Oriented Programming</header>
+    <header>Entry Form</header>
 
     <section class="container">
         <form id="my-form">
           <h1>Add User</h1>
           <div class="msg"></div>
           <div>
-            <label for="name">Name:</label>
-            <input type="text" id="name">
+            <label for="username">Username:</label>
+            <input type="text" id="username">
           </div>
           <div>
             <label for="email">Email:</label>
-            <input type="text" id="email">
+            <input type="email" id="email">
           </div>
-          <input class="btn" type="submit" value="Submit">
+          <div>
+            <label for="email">Password:</label>
+            <input type="password" id="password">
+          </div>
+        </form>
+
+        <form id="my-form">
+          <div class="msg"></div>
+          <div>
+            <label for="firstname">First Name:</label>
+            <input type="text" id="firstname">
+          </div>
+          <div>
+            <label for="lastname">Last Name:</label>
+            <input type="text" id="lastname">
+          </div>
+          <div>
+            <label for="dob">Date of Birth:</label>
+            <input type="text" id="dob">
+          </div>
+        </form>
+
+        <form id="my-form">
+          <div class="msg"></div>
+          <div>
+            <div>Accept terms of use.</div>
+            <input type="checkbox" id="termcheck"> I accept.</input>
+          </div>
+          <input class="btn" id="submit" type="submit" value="Submit">
         </form>
   
-        <ul id="users"></ul>
+        <!-- <ul id="users"></ul>
   
         <ul class="items">
           <li class="item">Item 1</li>
           <li class="item">Item 2</li>
           <li class="item">Item 3</li>
-        </ul>
+        </ul> -->
       </section>
 
     <script src="objectoriented.js"></script>

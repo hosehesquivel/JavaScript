@@ -17,6 +17,11 @@ class Calculator {
 
     appendNumber(number) {
         if (number === '.' && this.currentOperand.includes('.')) return
+
+        if (computationResult != null)
+            this.currentOperand = ""
+            computationResult = null
+
         this.currentOperand = this.currentOperand.toString() + number.toString()
     }
 
@@ -51,9 +56,9 @@ class Calculator {
             default:
                 return
         }
+        computationResult = computation
         this.currentOperand = computation
         this.operation = undefined
-        this.previousOperand = ''
     }
 
     getDisplayNumber(number) {
@@ -94,7 +99,7 @@ const previousOperandTextElement = document.querySelector('[data-previous-operan
 const currentOperandTextElement = document.querySelector('[data-current-operand]')
 
 const calculator =  new Calculator(previousOperandTextElement, currentOperandTextElement)
-
+let computationResult
 
 numberButtons.forEach(button => {
     button.addEventListener('click', () => {

@@ -35,13 +35,30 @@
   #my-form {
     padding: 2rem;
     background: #f4f4f4;
+    margin-bottom: 10px;
   }
   
   #my-form label {
     display: block;
   }
   
-  #my-form input[type='text'] {
+  #my-form input[type='text']{
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+
+  #my-form input[type='email']{
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+
+  #my-form input[type='password']{
     width: 100%;
     padding: 8px;
     margin-bottom: 10px;
@@ -62,6 +79,10 @@
   
   .btn:hover {
     background: #444;
+  }
+
+  .btn:active {
+    background: #333;
   }
   
   .bg-dark {

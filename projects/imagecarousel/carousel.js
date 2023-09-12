@@ -50,22 +50,38 @@ prevbutton.addEventListener('click', e => {
     moveToSlide(track, currentSlide, previousSlide);
 });
 
+window.addEventListener('keydown', e =>{
+    if (e.key == "ArrowLeft") {
+        const currentSlide = track.querySelector('.current-slide');
+        const previousSlide = currentSlide.previousElementSibling;
 
+        moveToSlide(track, currentSlide, previousSlide);
+    }
+})
+
+window.addEventListener('keydown', e =>{
+    if (e.key == "ArrowRight") {
+        const currentSlide = track.querySelector('.current-slide');
+        const nextSlide = currentSlide.nextElementSibling;
+
+        moveToSlide(track, currentSlide, nextSlide);
+    }
+})
 
 // Timer
-setTimer()
-function setTimer(){
-    var timer = setTimeout(nextSlide, 3000)
-}
+// setTimer()
+// function setTimer(){
+//     var timer = setTimeout(nextSlide, 3000)
+// }
 
-function nextSlide(){
-    const currentSlide = track.querySelector('.current-slide');
-    const nextSlide = currentSlide.nextElementSibling;
+// function nextSlide(){
+//     const currentSlide = track.querySelector('.current-slide');
+//     const nextSlide = currentSlide.nextElementSibling;
 
-    moveToSlide(track, currentSlide, nextSlide);
+//     moveToSlide(track, currentSlide, nextSlide);
 
-    setTimer()
-}
+//     setTimer()
+// }
 
 // dotsNav.addEventListener('click', e => {
 //     const targetDot = e.target.closest('button');
