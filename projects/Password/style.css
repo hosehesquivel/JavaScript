@@ -180,12 +180,27 @@ input[type=number]:focus {
 
 
 /* CHECKBOXES */
-input[type=checkbox] {
-    width: 20px;
-    height: 20px;
-    outline: 0;
+input[type="checkbox"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #fff;
+    margin: 0;
+
+    font: inherit;
+    color: white;
+    width: 1.15em;
+    height: 1.15em;
     border: 0;
-}
+    border-radius: 0.15em;
+    transition: all .2s;
+  }
+
+  input[type="checkbox"]:checked {
+    background-color: var(--button);
+    transform-origin: bottom left;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  }
+  
 
 
 
