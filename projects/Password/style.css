@@ -1,42 +1,62 @@
+/* RESET */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+
+
+/* ROOT */
+:root {
+    --text: #ffffff;
+    --background: rgb(45, 39, 53);
+    --backgroundcontainer: rgb(6, 10, 37);
+    --shadow: #12072a;
+    --button: #3B3B98;
+}
+
 body {
-    background-color: rgb(45, 39, 53);
     font-family: Poppins, sans-serif;
+    background-color: var(--background);
+    color: var(--text);
 }
 
-.container {
-    background-color: rgb(6, 10, 37);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 30rem;
-    color: white;
-    box-shadow: 0px 2px 10px #12072a;
-    font-family: Poppins, sans-serif;
-    border-radius: 3%;
-    padding: 20px;
-}
 
+
+/* HEADER */
 h1 {
     text-align: center;
     padding: 0 0 15px;
 }
 
+
+
+/* CONTAINER */
+.container {
+    position: absolute;
+    width: 30rem;
+    background-color: var(--backgroundcontainer);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0px 2px 10px var(--shadow);
+    padding: 20px;
+    border-radius: 3%;
+}
+
+
+
+/* RESULT */
 .result-container {
-    background-color: rgb(14, 14, 78);
     display: flex;
     justify-content:space-between;
     align-items: center;
     position: relative;
-    padding: 10px;
-	height: 50px;
 	width: 100%;
+	height: 70px;
+    padding: 10px;
+    background-color: rgb(14, 14, 78);
 }
 
 .result-container #result {
@@ -44,33 +64,55 @@ h1 {
 	max-width: calc(100% - 40px);
 }
 
-.result-container .btn {
-    font-size: 20px;
-    color: white;
-}
 
+
+/* COPY BUTTON */
 .btn {
-    border: none;
-    color: ffffff;
-    cursor: pointer;
+    display: none;
+    position: relative;
+    width: 75px;
+    height: 100%;
     font-size: 16px;
-    padding: 8px 12px;
-	background-color: #3B3B98;
+	background-color: var(--button);
+    opacity: 0;
+    border: none;
+    cursor: pointer;
 }
 
-.btn-large {
-	display: block;
-	width: 100%;
-    color: white;
-    font-size: 20px;
-}
-
-.btn img {
+.btn-highlight {
+    position: absolute;
+    top: 0;
     width: 100%;
     height: 100%;
-    color:white;
+    background-color: yellow;
+    transform-origin: center;
+    transform: scaleX(0);
+    transition: all 0.2s;
+    z-index: 0;
 }
 
+.btn P {
+    position: relative;
+    z-index: 1;
+    color: var(--text);
+}
+
+.btn:hover .btn-highlight {
+    transform: scaleX(1);
+    box-shadow: 0 0 10px yellow;
+}
+
+.btn:hover p {
+    color: black;
+}
+
+.btn:active .btn-highlight{
+    background-color: var(--button);
+}
+
+
+
+/* SETTINGS */
 .setting {
     display: flex;
 	justify-content: space-between;
@@ -78,14 +120,121 @@ h1 {
 	margin: 20px 0;
 }
 
-.setting #characterAmountRange {
-    color: black;
+
+
+/* RANGE */
+input[type=range] {
+    background: transparent;
+    cursor: pointer;
+    width: 150px;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    background-color: var(--button);
+}
+
+input[type=range]::-moz-range-track {
+    background-color: var(--button);
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    margin-top: -12px;
+    background-color: var(--text);
+    height: 2rem;
+    width: 1rem;    
+ }
+
+ input[type="range"]::-moz-range-thumb {
+    border: none;
+    border-radius: 0;
+    background-color: var(--text);
+    height: 1rem;
+    width: .5rem;
+}
+
+
+
+/* NUMBER */
+input[type=number] {
+    width: 45px;
+    height: 20px;
+    line-height: 1.65;
+    float: left;
+    display: block;
+    padding: 0;
+    margin: 0;
+    padding-left: 20px;
+    border: 0;
+}
+
+input[type=number]:focus {
+    outline: 0;
 }
 
 .setting #characterAmountNumber {
     width: 50px;
 }
 
+
+
+/* CHECKBOXES */
+input[type=checkbox] {
+    width: 20px;
+    height: 20px;
+    outline: 0;
+    border: 0;
+}
+
+
+
+/* GENERATE BUTTON */
+.btn-large {
+	display: block;
+    position: relative;
+    height: 60px;
+	width: 100%;
+    border: none;
+    background-color: var(--button);
+    cursor: pointer;
+}
+
+.btn-large-highlight {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: yellow;
+    transform-origin: center;
+    transform: scaleX(0);
+    transition: all 0.2s;
+    z-index: 0;
+}
+
+.btn-large p {
+    position: relative;
+    z-index: 1;
+    color: var(--text);
+    font-size: 20px;
+}
+
+.btn-large:hover .btn-large-highlight {
+    transform: scaleX(1);
+    box-shadow: 0 0 10px yellow;
+}
+
+.btn-large:hover p {
+    color: black;
+}
+
+.btn-large:active .btn-large-highlight {
+    background-color: var(--button);
+}
+
+
+
+/* COPY ALERT MESSAGE */
 .copy-alert {
     display: none;
     background-color: rgba(0, 0, 0, 0.4);
@@ -117,12 +266,49 @@ h1 {
     justify-content: center;
 }
 
-.copy-alert-msg .btn {
+
+
+/* COPY ALERT BUTTON */
+.btnok {
+    position: relative;
     width: 100%;
     height: 50%;
-    color: white;
+    background-color: var(--button);
+    border: none;
+    cursor: pointer;
 }
 
+.btnok p {
+    position: relative;
+    z-index: 1;
+    color: var(--text);
+    font-size: 16px;
+}
+
+.btnok-highlight {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: yellow;
+    transform-origin: center;
+    transform: scaleX(0);
+    transition: all 0.2s;
+    z-index: 0;
+}
+
+.btnok:hover .btnok-highlight {
+    transform: scaleX(1);
+    box-shadow: 0 0 10px yellow;
+}
+
+.btnok:hover p {
+    color: black;
+}
+
+
+
+/* MOBILE RESPONSIVENESS */
 @media only screen and (max-width: 400px) {
     .container {
         width: 100%;

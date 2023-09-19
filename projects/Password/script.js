@@ -18,6 +18,7 @@ const SYMBOL_LIST = generateArray(33, 47).concat(
                     generateArray(91, 96)).concat(
                     generateArray(123, 126))
 
+
 // Events
 lengthEl.addEventListener('input', syncLength)
 rangeEl.addEventListener('input', syncLength)
@@ -27,7 +28,9 @@ clipboard.addEventListener('click', () => {
     const textarea = document.createElement('textarea');
 	const password = resultEl.innerText;
 	
-	if(!password) { return; }
+	if(!password) { 
+        return; 
+    }
 	
 	textarea.value = password;
 	document.body.appendChild(textarea);
@@ -37,13 +40,14 @@ clipboard.addEventListener('click', () => {
     // alert("Password Copied!")
     copyalertcont.style.display = "block"
     gsap.to(".copy-alert", {opacity: 1, duration: .2});
+
+    gsap.to(clipboard, {opacity: 0, duration: .2, onComplete: clipboardAway})
 });
 
 okbtn.addEventListener('click', () => {
     console.log('ok')
     resultEl.innerText = ''
-    gsap.to(".copy-alert", {opacity: 0, duration: .2});
-    copyalertcont.style.display = "none"
+    gsap.to(".copy-alert", {opacity: 0, duration: .2, onComplete: copyAlertAway});
 });
 
 generateEl.addEventListener('click', () => {
@@ -53,9 +57,20 @@ generateEl.addEventListener('click', () => {
     const hasSymbol = symbolsEl.checked;
 
     resultEl.innerText = generatePassword(length, hasUpper, hasNumber, hasSymbol)
+    
+    clipboard.style.display = "block"
+    gsap.to(clipboard, {opacity: 1, duration: .1})
 });
 
 // Functions
+
+function copyAlertAway() {
+    copyalertcont.style.display = "none"
+}
+
+function clipboardAway() {
+    clipboard.style.display = "none"
+}
 
 function syncLength(e) {
     const value = e.target.value

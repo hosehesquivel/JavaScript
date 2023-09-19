@@ -1,0 +1,238 @@
+/* ROOT */
+root{
+    --black: black;
+    --duration: 0.4sec;
+}
+
+
+/* RESET */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+}
+
+html {
+    color-scheme: dark light;
+}
+
+img, svg, picture, video {
+    display: block;
+    max-width: 100%;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+}
+
+.card {
+    width: 15rem;
+    height: 7rem;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 0 30px;
+    perspective: 2500px;
+    margin: 0 50px;
+}
+  
+.cover-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+  
+.wrapper {
+    background: transparent;
+    transition: all 0.5s;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+}
+  
+.card:hover .wrapper{
+    transform: perspective(900px) translateY(-5%) rotateX(25deg) translateZ(0);
+    box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+}
+
+.wrapper::before,
+.wrapper::after {
+  content: "";
+  opacity: 0;
+  width: 100%;
+  height: 80px;
+  transition: all 0.5s;
+  position: absolute;
+  left: 0;
+}
+
+.wrapper::before {
+    top: 0;
+    height: 100%;
+    background-image: linear-gradient(
+      to top,
+      transparent 46%,
+      rgba(12, 13, 19, 0.5) 68%,
+      rgba(12, 13, 19) 97%
+    );
+}
+
+.wrapper::after {
+    bottom: 0;
+    opacity: 1;
+    background-image: linear-gradient(
+      to bottom,
+      transparent 46%,
+      rgba(12, 13, 19, 0.5) 68%,
+      rgba(12, 13, 19) 97%
+    );
+}
+
+.card:hover .wrapper::before,
+.wrapper::after {
+  opacity: 1;
+}
+
+.card:hover .wrapper::after {
+    height: 120px;
+}
+
+/* .card2 {
+    display: grid;
+    grid-template-rows: 1fr 2fr 1fr;
+    width: 300px;
+    height: 400px;
+    background: gray;
+    transition: all 0.5s;
+}
+
+.title {
+    transform-origin: 0 100%;
+    grid-row: 1;
+    display: flex;
+    height: 0;
+    align-items: end;
+    transition: all 0.5s;
+    overflow: hidden;
+    transform: scaleY(0);
+}
+
+.wrapper2 {
+    grid-row: 2;
+}
+
+.summary {
+    grid-row: 3;
+    height: 0;
+    transition: all 0.5s;
+    overflow: hidden;
+}
+
+.card2:hover {
+    padding: 10px;
+}
+
+.card2:hover .title {
+    background-color: blue;
+    height: 30px;
+    transform: scaleY(1);
+}
+
+.card2:hover .summary {
+    background-color: blue;
+    height: 30px;
+}
+
+.block{
+    display: block;
+    background-color: black;
+    transform-origin: 0 100%;
+    width: 300px;
+    height: 200px;
+    transition: height .5s;
+}
+
+.block:hover {
+    height: 400px;
+} */
+
+.card2 {
+    position: relative;
+    display: grid;
+    grid-template-rows: auto .9fr auto;
+    width: 300px;
+    height: 350px;
+    padding: 0;
+    transition: all 0.5s;
+}
+
+.title {
+    grid-row: 1;
+    background-color: blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 0; */
+    /* overflow: hidden; */
+    z-index: -1;
+    transform: translateY(50px);
+    transition: all 0.5s;
+}
+
+.wrapper2 {
+    grid-row: 2;
+    display: block;
+    position:relative;
+    background-color: blue;
+    border: solid blue 5px;
+    transition: all 0.5s;
+}
+
+.cardimage {
+    background:#bada55;
+    overflow: hidden;
+    width: 100%;
+    transition: all 0.5s;
+}
+
+.summary {
+    grid-row: 3;
+    background-color: blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-50px);
+    /* overflow: hidden; */
+    z-index: -1;
+    transition: all 0.5s;
+}
+
+.card2:hover {
+    border-radius: 5px;
+}
+
+.card2:hover .cardimage {
+    transform-origin: center;
+    transform: scale(0.9);
+}
+
+.card2:hover .title {
+    transform: translateY(0);
+}
+
+.card2:hover .summary {
+    transform: translateY(0px);
+}

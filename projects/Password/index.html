@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Password Generator</title>
+    <link rel="preload" href="./style.css" as="style">
     <link rel="stylesheet" href="./style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,7 +20,8 @@
                 <span id="result"></span>
             </div>
             <button class="btn" id="clipboard">
-                Copy
+                <p>Copy</p>
+                <div class="btn-highlight"></div>
             </button>
         </div>
         <div class="settings">
@@ -44,17 +46,22 @@
                 <label>Include Symbols</label>
                 <input type="checkbox" class="check" id="symbols" checked />
             </div>
-
-            <button class="btn btn-large" id="generate">
-                Generate Password
-            </button>
         </div>
+
+        <button class="btn-large" id="generate">
+            <p>Generate Password</p>
+            <div class="btn-large-highlight"></div>
+        </button>
+
     </div>
 
     <div class="copy-alert" id="copy-alert">
         <div class="copy-alert-msg" id="copy-alert-msg">
             <h2>Password copied!</h2>
-            <button class="btn btnok" id="okbutton">OK</button>
+            <button class="btnok" id="okbutton">
+                <p>OK</p>
+                <div class="btnok-highlight"></div>
+            </button>
         </div>
     </div>
 
