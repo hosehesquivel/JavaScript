@@ -183,9 +183,8 @@ input[type=number]:focus {
 input[type="checkbox"] {
     -webkit-appearance: none;
     appearance: none;
-    background-color: #fff;
+    background-color: white;
     margin: 0;
-
     font: inherit;
     color: white;
     width: 1.15em;
@@ -196,7 +195,8 @@ input[type="checkbox"] {
   }
 
   input[type="checkbox"]:checked {
-    background-color: var(--button);
+    background-color: yellow;
+    box-shadow: 0 0 10px yellow;
     transform-origin: bottom left;
     clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
   }
