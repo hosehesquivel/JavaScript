@@ -42,6 +42,7 @@ clipboard.addEventListener('click', () => {
     gsap.to(".copy-alert", {opacity: 1, duration: .2});
 
     gsap.to(clipboard, {opacity: 0, duration: .2, onComplete: clipboardAway})
+    gsap.to(resultEl, {opacity: 0, duration: .2})
 });
 
 okbtn.addEventListener('click', () => {
@@ -60,6 +61,7 @@ generateEl.addEventListener('click', () => {
     
     clipboard.style.display = "block"
     gsap.to(clipboard, {opacity: 1, duration: .1})
+    gsap.to(resultEl, {opacity: 1, duration: .2})
 });
 
 // Functions
