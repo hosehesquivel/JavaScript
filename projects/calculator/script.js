@@ -90,6 +90,7 @@ class Calculator {
     }
 }
 
+const background = document.body
 const numberButtons = document.querySelectorAll('[data-number]')
 const operationButtons = document.querySelectorAll('[data-operation]')
 const equalsButton = document.querySelector('[data-equals]')
@@ -105,6 +106,7 @@ numberButtons.forEach(button => {
     button.addEventListener('click', () => {
         calculator.appendNumber(button.innerText)
         calculator.updateDisplay()
+        // background.style.background = "linear-gradient(to right, #eee, #fff)"
     })
 })
 
