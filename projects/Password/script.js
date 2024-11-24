@@ -1,4 +1,4 @@
-import { wordArray } from './words.js';
+import { wordArray } from './words.js';                 // Imports the word Array. Always use './' when referencing in same folder.
 
 const resultEl = document.getElementById('result');
 const lengthEl = document.getElementById('characterAmountNumber');
