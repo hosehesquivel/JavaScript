@@ -1,4 +1,4 @@
-import { wordArray } from '/words.js';
+import { wordArray } from './words.js';
 
 const resultEl = document.getElementById('result');
 const lengthEl = document.getElementById('characterAmountNumber');
@@ -52,6 +52,7 @@ okbtn.addEventListener('click', () => {
 });
 
 generateEl.addEventListener('click', () => {
+    console.log('generate')
     const length = +lengthEl.value;
     const hasUpper = uppercaseEl.checked;
     const hasNumber = numbersEl.checked; // Change to value.
